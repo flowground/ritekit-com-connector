@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "hashtag": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

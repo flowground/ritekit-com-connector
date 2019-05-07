@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "post": {
+            "required": true,
+            "type": "string"
+        },
+        "maxHashtags": {
+            "required": false,
+            "type": "integer",
+            "default": 2
+        },
+        "hashtagPosition": {
+            "required": false,
+            "type": "string",
+            "default": "auto"
+        }
+    }
+}

@@ -1,0 +1,255 @@
+{
+    "title": "RiteKit",
+    "description": "RiteKit API is based on REST principles.\n\nAuthentication uses standard OAuth 2.0 process\n\n##Getting started\n\n1. Sign up for [RiteKit](https://ritekit.com/)\n\n1. Go to [developer dashboard](https://ritekit.com/developer/dashboard/)\n\n1. Click \"Create a token\" button to get your **Client ID** and **Client secret**\n\n1. When you reach your free limit of calls per month, [upgrade to paid tiers](https://ritekit.com/developer/)\n\n## Options for authorizing API Calls\n\n#### Using Client ID directly\n\nYou can directly connect to our API using your **client ID** by sending it as a GET query parameter. This option is simple (no need for oAuth) but it should be used only in case the Client ID is not exposed publicly.\n\nGET  https://api.ritekit.com/v1/stats/multiple-hashtags?tags=php&client_id=292c6912e7710c838347ae178b4a",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/ritekit.com/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.ritekit.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_v1_emoji_auto_emojify": {
+            "main": "./lib/actions/get_v1_emoji_auto_emojify.js",
+            "title": "Auto-Emojify",
+            "description": "Returns text of the post with emoji added",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_emoji_auto_emojify.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_emoji_suggestions": {
+            "main": "./lib/actions/get_v1_emoji_suggestions.js",
+            "title": "Emoji Suggestions",
+            "description": "Returns list of emoji suggestions for a given text of the post",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_emoji_suggestions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_images_animate": {
+            "main": "./lib/actions/get_v1_images_animate.js",
+            "title": "Animate Image",
+            "description": "Returns URL of an animated GIF.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_images_animate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_images_logo": {
+            "main": "./lib/actions/get_v1_images_logo.js",
+            "title": "Company Logo",
+            "description": "Returns a company logo based on website domain. If the logo is not in our database yet, it will be extracted from the site on the fly. White logo background is automatically removed to make the logo look better on color backgrounds.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_images_logo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_images_quote": {
+            "main": "./lib/actions/get_v1_images_quote.js",
+            "title": "Text to Image",
+            "description": "Returns URL of an image created from text according to given style parameters",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_images_quote.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_link_cta": {
+            "main": "./lib/actions/get_v1_link_cta.js",
+            "title": "List of CTAs",
+            "description": "Returns list of available CTA for current user. Requires each user to authenticate with RiteKit",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_link_cta.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_link_short_link": {
+            "main": "./lib/actions/get_v1_link_short_link.js",
+            "title": "Shorten Link",
+            "description": "Returns a shorten link with a given CTA.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_link_short_link.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_search_trending": {
+            "main": "./lib/actions/get_v1_search_trending.js",
+            "title": "Trending Hashtags",
+            "description": "Returns list of hashtags currently trending on Twitter",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_search_trending.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_stats_auto_hashtag": {
+            "main": "./lib/actions/get_v1_stats_auto_hashtag.js",
+            "title": "Auto-Hashtag",
+            "description": "Returns auto-hashtagged text of the post.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_stats_auto_hashtag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_stats_hashtag_suggestions": {
+            "main": "./lib/actions/get_v1_stats_hashtag_suggestions.js",
+            "title": "Hashtag Suggestions",
+            "description": "Returns list of hashtag suggestions for a single-word topic or a shorter text up to 1000 characters. Takes into account both semantic relevancy and real-time hashtag popularity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_stats_hashtag_suggestions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_stats_history__hashtag_": {
+            "main": "./lib/actions/get_v1_stats_history__hashtag_.js",
+            "title": "Hashtag History",
+            "description": "Returns historical stats for a given hashtag from the last 30 days",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_stats_history__hashtag_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_stats_multiple_hashtags": {
+            "main": "./lib/actions/get_v1_stats_multiple_hashtags.js",
+            "title": "Hashtag Stats",
+            "description": "Returns real-time stats for up to 100 hashtags (updated hourly).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_stats_multiple_hashtags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v2_instagram_hashtags_cleaner": {
+            "main": "./lib/actions/get_v2_instagram_hashtags_cleaner.js",
+            "title": "Hashtags cleaner",
+            "description": "Remove banned hashtags before posting to Instagram",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v2_instagram_hashtags_cleaner.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

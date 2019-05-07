@@ -1,0 +1,73 @@
+{
+    "type": "object",
+    "properties": {
+        "quote": {
+            "required": true,
+            "type": "string"
+        },
+        "author": {
+            "required": true,
+            "type": "string"
+        },
+        "fontSize": {
+            "required": true,
+            "type": "integer"
+        },
+        "quoteFont": {
+            "required": true,
+            "type": "string"
+        },
+        "quoteFontColor": {
+            "required": true,
+            "type": "string"
+        },
+        "authorFont": {
+            "required": true,
+            "type": "string"
+        },
+        "authorFontColor": {
+            "required": true,
+            "type": "string"
+        },
+        "enableHighlight": {
+            "required": true,
+            "type": "integer"
+        },
+        "highlightColor": {
+            "required": true,
+            "type": "string"
+        },
+        "bgType": {
+            "required": true,
+            "type": "string"
+        },
+        "backgroundColor": {
+            "required": true,
+            "type": "string"
+        },
+        "gradientType": {
+            "required": true,
+            "type": "string"
+        },
+        "gradientColor1": {
+            "required": true,
+            "type": "string"
+        },
+        "gradientColor2": {
+            "required": true,
+            "type": "string"
+        },
+        "brandLogo": {
+            "required": true,
+            "type": "string"
+        },
+        "animation": {
+            "required": true,
+            "type": "string"
+        },
+        "showQuoteMark": {
+            "required": false,
+            "type": "integer"
+        }
+    }
+}
